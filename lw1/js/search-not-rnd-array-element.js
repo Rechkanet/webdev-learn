@@ -1,5 +1,4 @@
 function getRandomInt(min, max) {
-  var possible = "абвгдежзийклмнопрстуфхцчшщъыьэюя";
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -14,15 +13,15 @@ for (i = 0; i < arrLength; i++) {
 alert("Заполненный случайный массив " + array.join(' '));
 
 do {
-  searchKey = prompt("Введите номер для поиска ");
+  searchKey = prompt("Vvedite № dla poiska ");
   searchKey = parseInt(searchKey);
   if ((searchKey == "") || (isNaN(searchKey)) || (searchKey == null)) {
-    alert("Ошибка!");
+    alert("Errrror!");
   }
 } while ((searchKey == "") || (isNaN(searchKey)) || (searchKey == null));
 
 if (array.indexOf(searchKey) !== -1) {
-  alert("Элемент " + searchKey + " найден!");
+  alert("Element " + searchKey + " naiden!");
 } else {
-  alert("Элемент " + searchKey + " не найден!");
+  alert("Element " + searchKey + " ne naiden!");
 }
