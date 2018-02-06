@@ -6,3 +6,13 @@ function checkValidEmail() {
   }
   return true;
 }
+
+function checkPasswords() {
+  var pass = $(".registration__password"); 
+  var passConfirm = $(".registration__password-repeat");
+  if (($(pass[0]).val().length < 6) 
+      || ($(pass[0]).val() != $(passConfirm[0]).val())) {
+    return false;  
+  }
+  return true;
+}
