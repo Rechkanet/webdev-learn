@@ -24,7 +24,7 @@ function checkRules() {
   return false;
 }
 
-$(".registration").submit(function() {
+document.getElementsByClassName("registration")[0].onsubmit = function() {
   if (checkValidEmail() && checkPasswords() && checkRules()) {
     alert("Регистрация прошла успешно!");  
   } else {
@@ -37,4 +37,4 @@ $(".registration").submit(function() {
     }
     return false;
   }
-});
+};
