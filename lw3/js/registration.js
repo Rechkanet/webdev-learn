@@ -16,3 +16,10 @@ function checkPasswords() {
   }
   return true;
 }
+
+function checkRules() {
+  if ($(".registration__check-confirmation").prop("checked")) { 
+    return true;
+  }
+  return false;
+}
