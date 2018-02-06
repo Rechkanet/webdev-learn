@@ -15,3 +15,11 @@ function checkPasswords() {
   }
   return true;
 }
+
+function checkRules() {
+  var result = document.getElementsByClassName("registration__check-confirmation")[0].checked;
+  if (!result) {
+    return false;
+  }
+  return true;
+}
