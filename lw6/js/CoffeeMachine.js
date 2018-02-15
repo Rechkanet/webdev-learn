@@ -28,4 +28,22 @@ class CoffeeMachine {
                   item.price + ' руб.)');
     }, this);
   }
+
+  chooseCoffee(coffeeNumber) {
+    if (this.checkCoffeeNumber(coffeeNumber) && 
+        this.checkEnoughMoney(coffeeNumber - 1)) {
+      this.coffeeNumber = coffeeNumber;
+      return true;
+    }
+    return false;
+  }
+
+  checkCoffeeNumber(number) {
+    return ((number >= 1 ) && 
+            (number <= this.coffeeMenu.length));
+  }
+
+  checkEnoughMoney(coffeeNumber) {
+    return (this.balance >= this.coffeeMenu[coffeeNumber].price);
+  }
 }
