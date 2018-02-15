@@ -21,4 +21,11 @@ class CoffeeMachine {
     return cash === 1 || cash === 2 || cash === 5 || 
            cash === 10 || cash === 50 || cash === 100;
   }
+
+  getCoffeeMenu() {
+    this.coffeeMenu.forEach(function(item, i) {
+      console.log(item.coffeeId + ' - ' + item.coffeName + ' (' + 
+                  item.price + ' руб.)');
+    }, this);
+  }
 }
