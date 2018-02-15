@@ -23,10 +23,11 @@ class CoffeeMachine {
   }
 
   getCoffeeMenu() {
-    this.coffeeMenu.forEach(function(item, i) {
-      console.log(item.coffeeId + ' - ' + item.coffeName + ' (' + 
-                  item.price + ' руб.)');
-    }, this);
+    for (let i = 0; i < this.coffeeMenu.length; i++) {
+      console.log(this.coffeeMenu[i].coffeeId + ' - ' + 
+                  this.coffeeMenu[i].coffeName + ' (' + 
+                  this.coffeeMenu[i].price + ' руб.)');
+    }
   }
 
   chooseCoffee(coffeeNumber) {
@@ -45,5 +46,9 @@ class CoffeeMachine {
 
   checkEnoughMoney(coffeeNumber) {
     return (this.balance >= this.coffeeMenu[coffeeNumber].price);
+  }
+
+  calculateRemain() {
+    return this.balance - this.coffeeMenu[this.coffeeNumber - 1].price;
   }
 }
