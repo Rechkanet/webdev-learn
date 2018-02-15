@@ -51,4 +51,8 @@ class CoffeeMachine {
   calculateRemain() {
     return this.balance - this.coffeeMenu[this.coffeeNumber - 1].price;
   }
+
+  getRemainCash() {
+    return this.calculateRemain();
+  }
 }
