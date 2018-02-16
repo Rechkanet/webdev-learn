@@ -115,8 +115,8 @@ describe('Метод checkEnoughMoney', function() {
     { value: { balance: 0, coffeeNumber: 1 }, expected: false },
     { value: { balance: 2, coffeeNumber: 1 }, expected: false },
     { value: { balance: 0, coffeeNumber: 3 }, expected: false },
-    { value: { balance: 10, coffeeNumber: 3 }, expected: false },
-    { value: { balance: 15, coffeeNumber: 3 }, expected: false },
+    { value: { balance: 100, coffeeNumber: 2 }, expected: true },
+    { value: { balance: 20, coffeeNumber: 3 }, expected: true }
   ];
   arranges.forEach(function(arrange, i) {
     makeTest(arrange.value, arrange.expected);
@@ -141,6 +141,52 @@ describe('Метод chooseCoffee', function() {
     { value: { balance: 10, coffeeNumber: 1 }, expected: true },
     { value: { balance: 15, coffeeNumber: 2 }, expected: true },
     { value: { balance: 20, coffeeNumber: 3 }, expected: true }
+  ];
+  arranges.forEach(function(arrange, i) {
+    makeTest(arrange.value, arrange.expected);
+  });
+});
+
+describe('Метод getRemainCash', function() {
+  function makeTest(value, expected) {
+    it(`при балансе ${value.balance} и выбраном номере кофе ${value.coffee} сдача должена быть: ${expected}`, function() {
+      let testCoffeMachine = new CoffeeMachine();
+      testCoffeMachine.balance = value.balance;
+      testCoffeMachine.coffeeNumber = value.coffee;
+      let actual = testCoffeMachine.getRemainCash();
+      assert.equal(expected, actual);
+    });
+  }
+  let arranges = [
+    { value: { balance: 10, coffee: 1 }, expected: 0 },
+    { value: { balance: 50, coffee: 1 }, expected: 40 },
+    { value: { balance: 22, coffee: 1 }, expected: 12 },
+    { value: { balance: 100, coffee: 1 }, expected: 90 },
+    { value: { balance: 15, coffee: 2 }, expected: 0 },
+    { value: { balance: 25, coffee: 2 }, expected: 10 },
+  ];
+  arranges.forEach(function(arrange, i) {
+    makeTest(arrange.value, arrange.expected);
+  });
+});
+
+describe('Метод calculateRemain', function() {
+  function makeTest(value, expected) {
+    it(`при балансе ${value.balance} и выбраном номере кофе ${value.coffee} сдача должена быть: ${expected}`, function() {
+      let testCoffeMachine = new CoffeeMachine();
+      testCoffeMachine.balance = value.balance;
+      testCoffeMachine.coffeeNumber = value.coffee;
+      let actual = testCoffeMachine.calculateRemain();
+      assert.equal(expected, actual);
+    });
+  }
+  let arranges = [
+    { value: { balance: 10, coffee: 1 }, expected: 0 },
+    { value: { balance: 50, coffee: 1 }, expected: 40 },
+    { value: { balance: 22, coffee: 1 }, expected: 12 },
+    { value: { balance: 100, coffee: 1 }, expected: 90 },
+    { value: { balance: 15, coffee: 2 }, expected: 0 },
+    { value: { balance: 25, coffee: 2 }, expected: 10 },
   ];
   arranges.forEach(function(arrange, i) {
     makeTest(arrange.value, arrange.expected);
