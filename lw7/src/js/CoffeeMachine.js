@@ -1,3 +1,5 @@
+'use strict';
+
 class CoffeeMachine {
   constructor() {
     this.balance = 0;
@@ -56,3 +58,5 @@ class CoffeeMachine {
     return this.calculateRemain();
   }
 }
+
+module.exports = CoffeeMachine;
