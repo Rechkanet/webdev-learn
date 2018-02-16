@@ -101,3 +101,24 @@ describe('Метод checkCoffeeNumber', function() {
     makeTest(arrange.value, arrange.expected);
   });
 });
+
+describe('Метод checkEnoughMoney', function() {
+  function makeTest(value, expected) {
+    it(`при текущем балансе ${value.balance} и выбраном номере кофе ${value.coffeeNumber} возвращает ${expected}`, function() {
+      let testCoffeMachine = new CoffeeMachine();
+      testCoffeMachine.currentBalance = value.balance;
+      let actual = testCoffeMachine.checkEnoughMoney(value.coffeeNumber);
+      assert.equal(expected, actual);
+    });
+  }
+  let arranges = [
+    { value: { balance: 0, coffeeNumber: 1 }, expected: false },
+    { value: { balance: 2, coffeeNumber: 1 }, expected: false },
+    { value: { balance: 0, coffeeNumber: 3 }, expected: false },
+    { value: { balance: 10, coffeeNumber: 3 }, expected: false },
+    { value: { balance: 15, coffeeNumber: 3 }, expected: false },
+  ];
+  arranges.forEach(function(arrange, i) {
+    makeTest(arrange.value, arrange.expected);
+  });
+});
