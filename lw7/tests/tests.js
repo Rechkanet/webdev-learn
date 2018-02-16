@@ -22,7 +22,7 @@ describe('Метод getCoffeeMenu', function() {
 
 describe('Метод checkCash', function() {
   function makeTest(value, expected) {
-    it('принимает на вход ' + value + ' и должен вернуть ' + expected, function() {
+    it(`принимает ${value} и должен вернуть ${expected}`, function() {
       let testCoffeMachine = new CoffeeMachine();
       let actual = testCoffeMachine.checkCash(value);
       assert.equal(expected, actual);
@@ -51,3 +51,30 @@ describe('Метод checkCash', function() {
   });
 });
 
+describe('Метод setCash', function() {
+  function makeTest(value, expected) {
+    it(`добавляет ${value.cash} к текущему балансу ${value.balance}, баланс должен быть: ${expected}`, function() {
+      let testCoffeMachine = new CoffeeMachine();
+      testCoffeMachine.currentBalance = value.balance;
+      testCoffeMachine.setCash(value.cash);
+      let actual = testCoffeMachine.currentBalance;
+      assert.equal(expected, actual);
+    });
+  }
+  let arranges = [
+    { value: { balance: 0, cash: null }, expected: 0 },
+    { value: { balance: 5, cash: null }, expected: 5 },
+    { value: { balance: 0, cash: undefined }, expected: 0 },
+    { value: { balance: 100, cash: undefined }, expected: 100 },
+    { value: { balance: 10, cash: -1 }, expected: 10 },
+    { value: { balance: 0, cash: -20 }, expected: 0 },
+    { value: { balance: 5, cash: -20 }, expected: 5 },
+    { value: { balance: 100, cash: 3 }, expected: 100 },
+    { value: { balance: 0, cash: 51 }, expected: 0 },
+    { value: { balance: 5, cash: 51 }, expected: 5 },
+    { value: { balance: 10, cash: 51 }, expected: 10 },
+  ];
+  arranges.forEach(function(arrange, i) {
+    makeTest(arrange.value, arrange.expected);
+  });
+});
