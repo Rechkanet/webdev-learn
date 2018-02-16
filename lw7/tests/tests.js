@@ -106,8 +106,8 @@ describe('Метод checkEnoughMoney', function() {
   function makeTest(value, expected) {
     it(`при текущем балансе ${value.balance} и выбраном номере кофе ${value.coffeeNumber} возвращает ${expected}`, function() {
       let testCoffeMachine = new CoffeeMachine();
-      testCoffeMachine.currentBalance = value.balance;
-      let actual = testCoffeMachine.checkEnoughMoney(value.coffeeNumber);
+      testCoffeMachine.balance = value.balance;
+      let actual = testCoffeMachine.checkEnoughMoney(value.coffeeNumber - 1);
       assert.equal(expected, actual);
     });
   }
@@ -117,6 +117,30 @@ describe('Метод checkEnoughMoney', function() {
     { value: { balance: 0, coffeeNumber: 3 }, expected: false },
     { value: { balance: 10, coffeeNumber: 3 }, expected: false },
     { value: { balance: 15, coffeeNumber: 3 }, expected: false },
+  ];
+  arranges.forEach(function(arrange, i) {
+    makeTest(arrange.value, arrange.expected);
+  });
+});
+
+describe('Метод chooseCoffee', function() {
+  function makeTest(value, expected) {
+    it(`при текущем балансе ${value.balance} и выбраном номере кофе ${value.coffeeNumber} должен вернуть ${expected}`, function() {
+      let testCoffeMachine = new CoffeeMachine();
+      testCoffeMachine.balance = value.balance;
+      let actual = testCoffeMachine.chooseCoffee(value.coffeeNumber);
+      assert.equal(expected, actual);
+    });
+  }
+  let arranges = [
+    { value: { balance: 20, coffeeNumber: null }, expected: false },
+    { value: { balance: 20, coffeeNumber: undefined }, expected: false },
+    { value: { balance: 0, coffeeNumber: 1 }, expected: false },
+    { value: { balance: 5, coffeeNumber: 1 }, expected: false },
+    { value: { balance: 52, coffeeNumber: 1 }, expected: true },,
+    { value: { balance: 10, coffeeNumber: 1 }, expected: true },
+    { value: { balance: 15, coffeeNumber: 2 }, expected: true },
+    { value: { balance: 20, coffeeNumber: 3 }, expected: true }
   ];
   arranges.forEach(function(arrange, i) {
     makeTest(arrange.value, arrange.expected);
