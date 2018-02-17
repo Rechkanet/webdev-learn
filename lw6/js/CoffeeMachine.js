@@ -40,8 +40,7 @@ class CoffeeMachine {
   }
 
   checkCoffeeNumber(number) {
-    return ((number >= 1 ) && 
-            (number <= this.coffeeMenu.length));
+    return (this.coffeeMenu.find(item => item.coffeeId === number) !== undefined) ? true : false;
   }
 
   checkEnoughMoney(coffeeNumber) {
