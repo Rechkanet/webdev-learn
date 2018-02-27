@@ -1,4 +1,4 @@
-﻿body {
+body {
   margin: 0; 
      }
 
@@ -8,7 +8,7 @@ a{
 
 #content {
   background: linear-gradient(216deg, #ff8a40, #fd5068, #dc4588);
-  height: 600px; 
+  height: 100vh; 
         }
 
 #footer{
@@ -18,13 +18,13 @@ div.title {
   color: #fd5068; 
   display: inline-block;
   line-height: 0.5;
-  margin-left: 30px;
+  margin-left: auto;
   float: left; 
   line-height: 5px;
   font-size: 15px;
   margin-top: 20px;
-  width: 210px; 
-  margin-right: 10px;
+  width: 20%; 
+  margin-right: auto;
   text-align: center; 
        }
 div.subtitle{
@@ -37,6 +37,7 @@ img.logo {
   padding: 5%;
   height: 6%; 
   width: 6%; 
+  margin-bottom: 5vh;
          }
 img.store {
   padding: 1%;
@@ -44,5 +45,28 @@ img.store {
   width: 10%; 
          } 
 		 
-		 
-
+@media (max-width: 480px){		 
+div.title {
+  color: #fd5068; 
+  display: inline-block;
+  line-height: 0.5;
+  margin-left: auto;
+  float: left; 
+  line-height: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+  width: 100%; 
+  margin-right: auto;
+  text-align: center; 
+}
+img.store {
+    padding: 1%;
+    height: auto;
+    width: 40%;
+}
+img.logo {
+    padding: 5%;
+    height: auto;
+    width: 20%;
+	margin-bottom: 25vh;
+}
