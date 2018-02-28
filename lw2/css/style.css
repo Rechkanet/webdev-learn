@@ -1,19 +1,20 @@
 body {
   margin: 0; 
-     }
+}
 
-a{
+a {
   color: #000000;	 
-	 }
+}
 
 #content {
   background: linear-gradient(216deg, #ff8a40, #fd5068, #dc4588);
   height: 100vh; 
-        }
+}
 
-#footer{
+#footer {
   color: #ffffff;
-       }
+}
+
 div.title {
   color: #fd5068; 
   display: inline-block;
@@ -26,47 +27,54 @@ div.title {
   width: 20%; 
   margin-right: auto;
   text-align: center; 
-       }
-div.subtitle{
+}
+
+div.subtitle {
   color: #000000;
   display: inline-block;
   line-height: 0.5;
   margin-left: 20px;
-        }
+}
+
 img.logo {
   padding: 5%;
   height: 6%; 
   width: 6%; 
   margin-bottom: 5vh;
-         }
+}
+
 img.store {
   padding: 1%;
   height: 4%; 
   width: 10%; 
-         } 
+} 
 		 
 @media (max-width: 480px){		 
-div.title {
-  color: #fd5068; 
-  display: inline-block;
-  line-height: 0.5;
-  margin-left: auto;
-  float: left; 
-  line-height: 5px;
-  font-size: 15px;
-  margin-top: 20px;
-  width: 100%; 
-  margin-right: auto;
-  text-align: center; 
+  div.title {
+    color: #fd5068; 
+    display: inline-block;
+    line-height: 0.5;
+    margin-left: auto;
+    float: left; 
+    line-height: 5px;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 100%; 
+    margin-right: auto;
+    text-align: center; 
+  }
+    
+    img.store {
+      padding: 1%;
+      height: auto;
+      width: 40%;
+    }
+    
+    img.logo {
+      padding: 5%;
+      height: auto;
+      width: 20%;
+	  margin-bottom: 25vh;
+     }
 }
-img.store {
-    padding: 1%;
-    height: auto;
-    width: 40%;
-}
-img.logo {
-    padding: 5%;
-    height: auto;
-    width: 20%;
-	margin-bottom: 25vh;
-}
+ 
