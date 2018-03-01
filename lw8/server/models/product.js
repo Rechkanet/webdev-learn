@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const idvalidator = require('mongoose-id-validator');
 
 const ProductSchema = new Schema({
-  _id: {
-    type: Schema.Types.ObjectId,
-    required: [true]
-  },
   name: {
     type: String,
     required: [true]
   }
 });
 
-const Product = mongoose.model('note', ProductSchema);
+ProductSchema.plugin(idvalidator);
+
+const Product = mongoose.model('product', ProductSchema);
 
 module.exports = Product;
