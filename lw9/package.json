@@ -1,43 +1,16 @@
 {
   "name": "lw9",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "dev": "gulp dev",
-    "clean": "gulp clean",
-    "start-server": "nodemon ./server/server.js"
-  },
-  "devDependencies": {
-    "mongoose-id-validator": "^0.4.3",
-    "body-parser": "^1.18.2",
-    "browser-sync": "^2.18.13",
-    "express": "^4.16.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-imagemin": "^3.4.0",
-    "gulp-inject": "^4.3.0",
-    "gulp-install": "^1.1.0",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-remove-html-comments": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-rigger": "^0.5.8",
-    "gulp-sass": "^3.1.0",
-    "gulp-sync": "^0.1.4",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^4.3.11",
-    "imagemin-pngquant": "^5.0.1",
-    "mongodb": "^2.2.33",
-    "mongoose": "^4.13.0",
-    "morgan": "^1.9.0",
-    "nconf": "^0.8.5",
-    "node-static": "^0.7.10",
-    "nodemon": "^1.12.1",
-    "rimraf": "^2.6.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
