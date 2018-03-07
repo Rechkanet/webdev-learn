@@ -49,7 +49,7 @@ img.store {
   width: 10%; 
 } 
 		 
-@media (max-width: 480px){		 
+@media (max-width: 480px) {		 
   div.title {
   color: #fd5068; 
   display: inline-block;
