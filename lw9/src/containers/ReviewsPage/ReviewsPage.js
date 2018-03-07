@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Badge } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
 import './ReviewsPage.css';
 import { ERROR_404, ERROR_500 } from '../../constants/Errors';
 
