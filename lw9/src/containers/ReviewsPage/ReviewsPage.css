@@ -1,14 +1,14 @@
-.product {
+.review {
   text-decoration: none;
   color: black;
 }
 
-.product:hover {
+.review:hover {
   text-decoration: none;
   color: black;
 }
 
-.product:visited  {
+.review:visited  {
   text-decoration: none;
   color: black;
 }
