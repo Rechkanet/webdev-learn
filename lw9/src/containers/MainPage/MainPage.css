@@ -1,0 +1,18 @@
+.product {
+  text-decoration: none;
+  color: black;
+}
+
+.product:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.product:visited  {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+}
