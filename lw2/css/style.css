@@ -51,30 +51,30 @@ img.store {
 		 
 @media (max-width: 480px){		 
   div.title {
-    color: #fd5068; 
-    display: inline-block;
-    line-height: 0.5;
-    margin-left: auto;
-    float: left; 
-    line-height: 5px;
-    font-size: 15px;
-    margin-top: 20px;
-    width: 100%; 
-    margin-right: auto;
-    text-align: center; 
+  color: #fd5068; 
+  display: inline-block;
+  line-height: 0.5;
+  margin-left: auto;
+  float: left; 
+  line-height: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+  width: 100%; 
+  margin-right: auto;
+  text-align: center; 
   }
     
-    img.store {
-      padding: 1%;
-      height: auto;
-      width: 40%;
+  img.store {
+    padding: 1%;
+    height: auto;
+    width: 40%;
     }
     
-    img.logo {
-      padding: 5%;
-      height: auto;
-      width: 20%;
-	  margin-bottom: 25vh;
-     }
+  img.logo {
+    padding: 5%;
+    height: auto;
+    width: 20%;
+    margin-bottom: 25vh;
+    }
 }
  
